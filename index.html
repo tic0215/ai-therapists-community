@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Ethics for Therapists — Waitlist</title>
+    <meta name="description" content="The first community teaching psychotherapists how to use AI ethically, safely, and profitably. Join the waitlist." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #0f0e12;
+            --bg-secondary: #1a1820;
+            --bg-card: #231f2a;
+            --bg-input: #1e1b26;
+            --bg-form: #1a1820;
+            --text-primary: #f0ede8;
+            --text-secondary: #c5c0b8;
+            --text-muted: #8a8580;
+            --accent-warm: #d4a574;
+            --accent-glow: #e8c49a;
+            --accent-muted: #b8936a;
+            --accent-emerald: #6b9e7a;
+            --border-subtle: #2e2938;
+            --border-focus: #d4a574;
+            --shadow-card: 0 8px 32px rgba(0,0,0,0.5);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
+            --max-width: 1200px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== UTILITY ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 48px;
+            font-weight: 300;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-warm), var(--accent-glow));
+            border-radius: 4px;
+            margin: 16px auto 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 165, 116, 0.12);
+            color: var(--accent-glow);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 20%, rgba(212, 165, 116, 0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(107, 158, 122, 0.04) 0%, transparent 60%),
+                var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle 1px at 20% 30%, rgba(212, 165, 116, 0.08) 0%, transparent 100%),
+                radial-gradient(circle 1px at 80% 70%, rgba(232, 196, 154, 0.06) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: clamp(2rem, 6vw, 3.75rem);
+            line-height: 1.2;
+            max-width: 900px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--accent-glow);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-warm), var(--accent-muted));
+            color: #0f0e12;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(212, 165, 116, 0.25);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(212, 165, 116, 0.35);
+        }
+
+        .hero-cta:active {
+            transform: translateY(0);
+        }
+
+        .hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .hero-trust span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-trust svg {
+            flex-shrink: 0;
+        }
+
+        /* ===== THREE PILLARS ===== */
+        .pillars {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            border-color: rgba(212, 165, 116, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .pillar-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+        }
+
+        .pillar-icon.client-acq {
+            background: rgba(212, 165, 116, 0.12);
+            color: var(--accent-glow);
+        }
+
+        .pillar-icon.admin {
+            background: rgba(107, 158, 122, 0.12);
+            color: var(--accent-emerald);
+        }
+
+        .pillar-icon.knowledge {
+            background: rgba(232, 196, 154, 0.12);
+            color: var(--accent-glow);
+        }
+
+        .pillar-card h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            background: var(--bg-primary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            position: relative;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(212, 165, 116, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-warm);
+            background: linear-gradient(180deg, rgba(212, 165, 116, 0.06) 0%, var(--bg-card) 100%);
+            transform: scale(1.03);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-4px);
+        }
+
+        .pricing-label {
+            display: inline-block;
+            background: rgba(212, 165, 116, 0.15);
+            color: var(--accent-glow);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .pricing-availability {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.2rem;
+            font-weight: 500;
+            vertical-align: super;
+            color: var(--accent-glow);
+        }
+
+        .pricing-price .period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-original {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: 'âœ“';
+            color: var(--accent-emerald);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 0;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-cta:hover {
+            border-color: var(--accent-warm);
+            background: rgba(212, 165, 116, 0.06);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: linear-gradient(135deg, var(--accent-warm), var(--accent-muted));
+            color: #0f0e12;
+            border: none;
+            font-weight: 700;
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            opacity: 0.9;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== WAITLIST FORM ===== */
+        .waitlist {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .form-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--bg-form);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 48px 40px;
+        }
+
+        .form-wrapper h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .form-wrapper .form-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 32px 20px; }
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+        }
+
+        .form-group label .required {
+            color: var(--accent-warm);
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            transition: border-color 0.2s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238a8580' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-warm), var(--accent-muted));
+            color: #0f0e12;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 16px 0;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(212, 165, 116, 0.25);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        /* ===== TRUST SECTION ===== */
+        .trust-bar {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 32px 0;
+        }
+
+        .trust-bar-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-icon.therapist-built {
+            background: rgba(212, 165, 116, 0.12);
+        }
+
+        .trust-icon.hipaa {
+            background: rgba(107, 158, 122, 0.12);
+        }
+
+        .trust-icon.privacy {
+            background: rgba(232, 196, 154, 0.12);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-secondary);
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        footer a {
+            color: var(--accent-warm);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.7s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <span class="badge hero-badge animate-in">Now Accepting Founding Members</span>
+
+    <h1 class="animate-in delay-1">
+        AI Ethics for <em>Therapists</em>
+    </h1>
+
+    <p class="animate-in delay-2">
+        The first community teaching psychotherapists how to use AI ethically,
+        safely, and profitably. Built by a therapist &mdash; for therapists.
+    </p>
+
+    <a href="#waitlist" class="hero-cta animate-in delay-3">
+        Join the Waitlist
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </a>
+
+    <div class="hero-trust animate-in delay-4">
+        <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Built by a therapist, for therapists
+        </span>
+        <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            HIPAA-first approach
+        </span>
+        <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            GDPR/Privacy compliant
+        </span>
+    </div>
+</section>
+
+<!-- ===== THREE PILLARS ===== -->
+<section class="section pillars" id="pillars">
+    <div class="container">
+        <span class="badge" style="display:table;margin:0 auto 16px;">Our Focus</span>
+        <h2 class="section-title">Three Pillars of AI for Therapists</h2>
+        <p class="section-subtitle">
+            We equip you with practical, ethically-grounded AI skills across the three areas
+            that matter most to your practice.
+        </p>
+        <div class="accent-line"></div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon client-acq">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Client Acquisition</h3>
+                <p>
+                    Ethically leverage AI to write compelling website copy, craft
+                    therapist directory profiles, and create content that reaches
+                    the clients you serve best &mdash; without losing your voice.
+                </p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon admin">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <h3>Admin Work</h3>
+                <p>
+                    Cut documentation time by hours each week. Learn to use AI
+                    for clinical notes, treatment plans, insurance authorisation
+                    letters, and scheduling &mdash; all within HIPAA-safe workflows.
+                </p>
+            </div>
+
+            <div class="pillar-card">
+                <div class="pillar-icon knowledge">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Knowledge Monetization</h3>
+                <p>
+                    Turn your clinical expertise into digital products, courses,
+                    and paid newsletters. Use AI to ethically scale your impact
+                    and create passive income without seeing more clients.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trust-bar">
+    <div class="container">
+        <div class="trust-bar-inner">
+            <div class="trust-item">
+                <div class="trust-icon therapist-built">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <span>Built by a therapist, for therapists</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon hipaa">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <span>HIPAA-first approach</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon privacy">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-glow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <span>Your data is yours &mdash; never shared or sold</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="section pricing" id="pricing">
+    <div class="container">
+        <span class="badge" style="display:table;margin:0 auto 16px;">Pricing</span>
+        <h2 class="section-title">Choose Your Wave</h2>
+        <p class="section-subtitle">
+            Founding members lock in the lowest rate for life. Each wave fills up &mdash;
+            the earlier you join, the better the price.
+        </p>
+        <div class="accent-line"></div>
+
+        <div class="pricing-grid">
+            <!-- WAVE 1 -->
+            <div class="pricing-card animate-in delay-1">
+                <span class="pricing-label">Wave 1 &mdash; BETA</span>
+                <h3>Founding Member</h3>
+                <p class="pricing-availability">Only 20 spots available</p>
+                <div class="pricing-price">
+                    <span class="currency">$</span>9<span class="period">/mo</span>
+                </div>
+                <p class="pricing-original">$49/mo at launch</p>
+                <ul class="pricing-features">
+                    <li>Lifetime locked-in rate</li>
+                    <li>Monthly AI training workshops</li>
+                    <li>Curated HIPAA-safe tool guides</li>
+                    <li>Private community access</li>
+                    <li>Direct Q&amp;A with the founder</li>
+                    <li>Shape the curriculum</li>
+                </ul>
+                <a href="#waitlist" class="pricing-cta">Join the Waitlist</a>
+            </div>
+
+            <!-- WAVE 2 (FEATURED) -->
+            <div class="pricing-card featured animate-in delay-2">
+                <span class="pricing-label">Wave 2 &mdash; Early Access</span>
+                <h3>Early Member</h3>
+                <p class="pricing-availability">Next 50 spots</p>
+                <div class="pricing-price">
+                    <span class="currency">$</span>29<span class="period">/mo</span>
+                </div>
+                <p class="pricing-original">$49/mo at launch</p>
+                <ul class="pricing-features">
+                    <li>Locked-in rate for first year</li>
+                    <li>Monthly AI training workshops</li>
+                    <li>Curated HIPAA-safe tool guides</li>
+                    <li>Private community access</li>
+                    <li>Monthly office hours</li>
+                    <li>Template library access</li>
+                </ul>
+                <a href="#waitlist" class="pricing-cta">Join the Waitlist</a>
+            </div>
+
+            <!-- WAVE 3 -->
+            <div class="pricing-card animate-in delay-3">
+                <span class="pricing-label">Wave 3 &mdash; Launch</span>
+                <h3>Standard Member</h3>
+                <p class="pricing-availability">Official launch pricing</p>
+                <div class="pricing-price">
+                    <span class="currency">$</span>49<span class="period">/mo</span>
+                </div>
+                <p class="pricing-original">&nbsp;</p>
+                <ul class="pricing-features">
+                    <li>Standard monthly rate</li>
+                    <li>Monthly AI training workshops</li>
+                    <li>Curated HIPAA-safe tool guides</li>
+                    <li>Private community access</li>
+                    <li>Monthly office hours</li>
+                    <li>Template library access</li>
+                </ul>
+                <a href="#waitlist" class="pricing-cta">Join the Waitlist</a>
+            </div>
+        </div>
+
+        <p class="pricing-note">
+            All prices in USD. Cancel anytime. Founding and early members keep their
+            locked-in rate as long as their membership remains active.
+        </p>
+    </div>
+</section>
+
+<!-- ===== WAITLIST FORM ===== -->
+<section class="section waitlist" id="waitlist">
+    <div class="container">
+        <span class="badge" style="display:table;margin:0 auto 16px;">Join Us</span>
+        <h2 class="section-title">Secure Your Spot</h2>
+        <p class="section-subtitle">
+            Be among the first therapists to ethically and profitably integrate AI
+            into your practice. We'll notify you as soon as we launch.
+        </p>
+        <div class="accent-line"></div>
+
+        <div class="form-wrapper">
+            <h3>Waitlist Signup</h3>
+            <p class="form-subtitle">No spam. No selling your data. Just thoughtful updates.</p>
+
+            <form id="waitlistForm" action="#" method="POST" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Dr. Sarah Mitchell" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@practice.com" required />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="practiceType">Practice Type <span class="required">*</span></label>
+                        <select id="practiceType" name="practiceType" required>
+                            <option value="" disabled selected>Select your practice type</option>
+                            <option value="solo">Solo private practice</option>
+                            <option value="group">Group practice</option>
+                            <option value="agency">Agency / CMH</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="yearsExperience">Years in Practice <span class="required">*</span></label>
+                        <select id="yearsExperience" name="yearsExperience" required>
+                            <option value="" disabled selected>Select range</option>
+                            <option value="0-2">0&ndash;2</option>
+                            <option value="3-5">3&ndash;5</option>
+                            <option value="6-10">6&ndash;10</option>
+                            <option value="11-15">11&ndash;15</option>
+                            <option value="15plus">15+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="modality">Primary Therapeutic Modality</label>
+                    <input type="text" id="modality" name="modality" placeholder="e.g. CBT, Psychodynamic, EMDR, Somatic..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="biggestFear">What's your biggest fear about AI in therapy?</label>
+                    <textarea id="biggestFear" name="biggestFear" placeholder="Confidentiality? Loss of the therapeutic alliance? Being replaced? Tell us honestly..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="biggestHope">What's your biggest hope about AI in therapy?</label>
+                    <textarea id="biggestHope" name="biggestHope" placeholder="Less burnout? More time with clients? Better outcomes? We want to hear it." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="referral">Where did you hear about us? <span class="required">*</span></label>
+                    <select id="referral" name="referral" required>
+                        <option value="" disabled selected>Select one</option>
+                        <option value="twitter">Twitter / X</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="reddit">Reddit</option>
+                        <option value="colleague">Colleague</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom:24px;">
+                    <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.85rem;color:var(--text-muted);font-weight:300;cursor:pointer;">
+                        <input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:3px;accent-color:var(--accent-warm);" />
+                        <span>I agree to the <a href="#" style="color:var(--accent-warm);text-decoration:underline;">Privacy Policy</a> and consent to being contacted about the AI Ethics for Therapists community. Your data will never be shared or sold. <span class="required">*</span></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="form-submit">Join the Waitlist</button>
+            </form>
+
+            <p style="text-align:center;margin-top:20px;font-size:0.75rem;color:var(--text-muted);">
+                By submitting this form you agree to our Privacy Policy.
+                You can unsubscribe at any time.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <p>
+            <strong>AI Ethics for Therapists</strong> &mdash; The first community teaching
+            psychotherapists how to use AI ethically, safely, and profitably.
+            Built by a therapist, for therapists.
+        </p>
+        <br />
+        <p>
+            <strong>Privacy &amp; GDPR Compliance:</strong> Your personal data is stored securely
+            and used only to communicate with you about the AI Ethics for Therapists community.
+            We never share, sell, or rent your information to third parties.
+            You may request deletion of your data at any time by emailing
+            <a href="mailto:privacy@aifortherapists.com">privacy@aifortherapists.com</a>.
+            This site uses essential cookies only.
+        </p>
+        <br />
+        <p>
+            &copy; 2026 AI Ethics for Therapists. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- ===== SIMPLE FORM HANDLER (prevents default + shows thank-you) ===== -->
+<script>
+    (function() {
+        const form = document.getElementById('waitlistForm');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const required = form.querySelectorAll('[required]');
+            let valid = true;
+            required.forEach(function(field) {
+                if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+                    field.style.borderColor = '#c44a4a';
+                    valid = false;
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            if (!valid) return;
+
+            // Collect data
+            const data = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                practiceType: document.getElementById('practiceType').value,
+                yearsExperience: document.getElementById('yearsExperience').value,
+                modality: document.getElementById('modality').value,
+                biggestFear: document.getElementById('biggestFear').value,
+                biggestHope: document.getElementById('biggestHope').value,
+                referral: document.getElementById('referral').value,
+                consent: document.getElementById('consent').checked
+            };
+
+            console.log('Waitlist signup data:', data);
+
+            // Replace form with thank-you message
+            const wrapper = document.querySelector('.form-wrapper');
+            wrapper.innerHTML = `
+                <div style="text-align:center;padding:32px 16px;animation:fadeInUp 0.6s ease;">
+                    <div style="font-size:3rem;margin-bottom:16px;">&#10024;</div>
+                    <h3 style="font-family:var(--font-serif);font-weight:400;font-size:1.5rem;margin-bottom:12px;color:var(--text-primary);">
+                        You're on the list!
+                    </h3>
+                    <p style="color:var(--text-secondary);font-size:1rem;max-width:460px;margin:0 auto;line-height:1.7;">
+                        Thank you, <strong>${data.fullName}</strong>. We'll keep you updated on
+                        launch announcements, early-access opportunities, and exclusive founding-member
+                        pricing. Welcome to the community.
+                    </p>
+                    <p style="color:var(--text-muted);font-size:0.85rem;margin-top:20px;">
+                        Check your inbox for a confirmation email shortly.
+                    </p>
+                </div>
+            `;
+        });
+    })();
+</script>
+
+</body>
+</html>
